@@ -67,19 +67,19 @@ class Comment extends Component {
                                                     () => this.props.deleteComment(this.props.postIndex, this.props.commentId)
                                                 }
                                                 className="com-option"
-                                            ><i class="fa fa-trash"></i> Delete</button>
+                                            ><i className="fa fa-trash"></i> Delete</button>
 
                                             <button
                                                 onClick = { () => this.setState({ showEditSection: true }) }
                                                 className="com-option"
-                                            ><i class="fa fa-edit"></i> Edit </button>
+                                            ><i className="fa fa-edit"></i> Edit </button>
 
                                             <button
                                                 onClick = {
                                                     () => this.setState({ showReplySection: !this.state.showReplySection })
                                                 }
                                                 className="com-option"
-                                            ><i class="fa fa-reply"></i> Reply</button>
+                                            ><i className="fa fa-reply"></i> Reply</button>
 
                                         </div>
                                     ): (
@@ -88,7 +88,7 @@ class Comment extends Component {
                                                 () => this.setState({ showReplySection: !this.state.showReplySection})
                                             }
                                             className="com-option"
-                                        ><i class="fa fa-reply"></i> Reply</button>
+                                        ><i className="fa fa-reply"></i> Reply</button>
                                     )
                                 }
                                 

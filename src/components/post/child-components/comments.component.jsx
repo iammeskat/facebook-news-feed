@@ -8,7 +8,7 @@ class Comments extends Component {
         // comments.reverse();
 
         return (
-            <div class="comment-section" id = { "commentSection" + this.props.postIndex }>
+            <div className="comment-section" id = { "commentSection" + this.props.postIndex }>
                 <div className="d-flex row-h1 flex-column comments">
                 {
                     comments.map( comment => {

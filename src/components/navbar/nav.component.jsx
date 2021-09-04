@@ -7,7 +7,7 @@ class Nav extends Component {
     render() {
         return (
             <>
-                <div class="container-fluid sticky-top">
+                <div className="container-fluid sticky-top">
                     <div className="row nav bg-light">
                         <LeftItems/>
                         <MiddleItems/>

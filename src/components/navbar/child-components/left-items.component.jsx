@@ -7,9 +7,9 @@ class LeftItems extends Component {
                 <div className="d-flex row-h1 flex-row justify-content-start mt-2  left-items">
                     <img src="/img/logo.png" alt="" />
                     <form className="form-inline">
-                        <div class="input-group">
+                        <div className="input-group">
                             <span className="input-group-text search-icon"><li className="fa fa-search"></li></span>
-                            <input type="text" class="form-control search-box" placeholder="Search Facebook" />
+                            <input type="text" className="form-control search-box" placeholder="Search Facebook" />
                         </div>
                     </form>
                 </div>

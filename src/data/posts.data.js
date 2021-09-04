@@ -61,7 +61,7 @@ export const postsData = [
                 comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
             },
             {
-                id: 2,
+                id: 1,
                 parent_id: null,
                 userID: 2,
                 name: "React.js Org",

@@ -27,24 +27,29 @@ class App extends Component {
         }
     }
 
+
     // hide/show comment section
     handleCommentSection = (indx) => {
-        const windows = this.state.windows
-        windows.displayCommentSection[indx] = !this.state.windows.displayCommentSection[indx]
-        this.setState({ windows: windows })
+        const windows = { ...this.state.windows };
+        windows.displayCommentSection[indx] = !this.state.windows.displayCommentSection[indx];
+        this.setState({ windows: windows });
     }
+
 
     // popup window handler (Edit, Delete & Create Post)
     handlePopupWindow = (window, postId=null) => {
+
         if(postId!==null){
             const temp = this.state.temp;
             temp.postIndex = postId;
             this.setState({ temp: temp });
         }
-        const windows = this.state.windows
-        windows[window] = !this.state.windows[window]
-        this.setState({ windows: windows });
+
+        const windows = {...this.state.windows };
+        windows[window] = !this.state.windows[window];
+        this.setState({ windows: windows });  
     }
+
 
     // create post 
     handleCreatePost = (event) => {
@@ -65,6 +70,7 @@ class App extends Component {
         });
     }
 
+
     // edit post 
     handleEditPost = (index, closePopup, event) => {
         event.preventDefault();
@@ -72,16 +78,18 @@ class App extends Component {
 
         const posts = this.state.posts;
         posts[index].content = event.target[0].value;
-        this.setState({ posts: posts })
+        this.setState({ posts: posts });
     }
+
 
     // delete post 
     handleDeletePost = (index, closePopup) => {
         closePopup('displayDeletePost');
         const posts = this.state.posts;
-        posts.splice(index,1)
+        posts.splice(index,1);
         this.setState({ posts: posts });
     }
+
 
     // like button handler 
     handleLikeButton = (index) => {
@@ -95,23 +103,24 @@ class App extends Component {
             posts[index].like++;
         }
         
-        this.setState({posts: posts})
+        this.setState({posts: posts});
     }
+
 
     // create comment
     handleCreateComment = (data, event) => {
         const postIndex = data[0];
         const parentId = data[1] === undefined ? null : data[1];
 
-        if(event.target.value==="") return;
+        if( event.target.value === "" ) return;
         
         const posts = this.state.posts;
 
-        if(event.key === 'Enter'){
-            const len = posts[postIndex].comments.length;
-            let newId = 1;
-            if(len>0)
-                newId = posts[postIndex].comments[len-1].id + 1;
+        if( event.key === 'Enter' ){
+            const totalComment = posts[postIndex].comments.length;
+            let newId = 0;
+            if( totalComment > 0 )
+                newId = posts[postIndex].comments[totalComment-1].id + 1;
 
             posts[postIndex].comments.push({
                 id: newId,
@@ -120,40 +129,54 @@ class App extends Component {
                 name: this.state.user.userName,
                 imgSrc: this.state.user.imgSrc,
                 comment: event.target.value,
-            })
+            });
 
             event.target.value = "";
-            this.setState({posts: posts})
+            this.setState({posts: posts});
         } 
     }
+
 
     // update comment
     updateComment = (postIndex, commentId, event) => {
         event.preventDefault();
-
         if( event.target[0].value === '' ) return;
 
         const posts = this.state.posts;
-        posts[postIndex].comments.forEach(item => {
-            if(item.id===commentId){
-                item.comment = event.target[0].value;
+
+        for(var i = 0; i<posts[postIndex].comments.length; i++){
+            if(posts[postIndex].comments[i].id === commentId){
+                posts[postIndex].comments[i].comment = event.target[0].value;
+                break;
             }
-        })
-        this.setState({ posts: posts })
+        }
+        this.setState({ posts: posts });
     }
+
 
     // delete comment
     deleteComment = (postIndex, commentId) => {
         const posts = this.state.posts;
         const comments = posts[postIndex].comments;
 
-        for( var i = 0; i<comments.length; i++ ) {
-            if( comments[i].id === commentId ) {
-                comments.splice(i,1)
-            }
-        }
+        const childItem = [];
 
+        const getChildComment = ( id ) => {
+            for(var i = comments.length-1; i >= 0; i-- ) {
+                if( comments[i].parent_id === id ) getChildComment( comments[i].id );
+                else if( comments[i].id === id ) childItem.push(i)
+            }
+            return childItem;
+        }
+        getChildComment( commentId );
+
+        childItem.forEach( i => {
+            comments.splice(i, 1)
+        })
+        
+        posts[postIndex].comments = comments;
         this.setState({ posts: posts });
+        
     }
 
     render() {
