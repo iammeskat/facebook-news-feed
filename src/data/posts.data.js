@@ -4,40 +4,45 @@ export const postsData = [
         authorName: "Meskatul Islam",
         imgSrc: "./img/meskat.jpeg",
         duration: "1h",
-        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        content: `
+        This is my post. So I can delete or edit this post.
+        Click on the "..." (3 dots) to edit or delete this post.
+        Click on the "Comment" button to view comments or create a comment on this post.
+        
+        `,
         like: 14,
         isLiked: true,
         comments: [
             {
                 id: 0,
                 parent_id: null,
-                userID: 2,
-                name: "Pondits",
-                imgSrc: "./img/Pondit.png",
-                comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
+                userID: 1,
+                name: "Meskatul Islam",
+                imgSrc: "./img/meskat.jpeg",
+                comment: "This is my comment. I can delete or edit this comment.",
             },
             {
                 id: 1,
                 parent_id: 0,
-                userID: 1,
-                name: "Meskatul Islam",
-                imgSrc: "./img/meskat.jpeg",
+                userID: 2,
+                name: "Pondits",
+                imgSrc: "./img/pondit.png",
                 comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
             },
             {
                 id: 2,
                 parent_id: null,
                 userID: 2,
-                name: "React.js Org",
+                name: "React.js",
                 imgSrc: "./logo192.png",
                 comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
             },
             {
                 id: 3,
                 parent_id: 1,
-                userID: 2,
-                name: "Pondits",
-                imgSrc: "./img/pondit.png",
+                userID: 1,
+                name: "Meskatul Islam",
+                imgSrc: "./img/meskat.jpeg",
                 comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
             },
         ],
@@ -48,8 +53,21 @@ export const postsData = [
         authorName: "Pondits",
         imgSrc: "./img/pondit.png",
         duration: "1h",
-        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        like: 10,
+        content: `# Features of Facebook news feed app
+        01. Render multiple post
+        02. Create post
+        03. Edit post
+        04. Delete post
+        05. Like post
+        06. Number of likes
+        07. Create comment
+        08. Reply comment
+        09. Edit comment
+        10. Delete comment (with child comments)
+        11. Render nested comments
+        12. Number of comments
+        `,
+        like: 19,
         isLiked: false,
         comments: [
             {
@@ -67,6 +85,14 @@ export const postsData = [
                 name: "React.js Org",
                 imgSrc: "./logo192.png",
                 comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
+            },
+            {
+                id: 2,
+                parent_id: null,
+                userID: 1,
+                name: "Meskatul Islam",
+                imgSrc: "./img/meskat.jpeg",
+                comment: "This is my comment. I can delete or edit this comment.",
             },
         ],
     },

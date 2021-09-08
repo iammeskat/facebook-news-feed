@@ -43,6 +43,7 @@ h2{
 .content p{
     font-weight: 450;
     color: rgb(77, 69, 69);
+    white-space: pre-line
 }
 .post-action{
     margin-top: 10px;

@@ -16,14 +16,14 @@ class App extends Component {
             imgSrc: "./img/meskat.jpeg",
         },
 
-        windows: {
+        windows: { // hide/show popup window
             displayCreatePost: false,
             displayDeletePost: false,
             displayCommentSection: new Array(postsData.length).fill(false),
         },
 
         temp: {
-            postIndex: '',
+            postIndex: '', // store post id to delete or edit post
         }
     }
 
@@ -161,6 +161,7 @@ class App extends Component {
 
         const childItem = [];
 
+        // delete child comment
         const getChildComment = ( id ) => {
             for(var i = comments.length-1; i >= 0; i-- ) {
                 if( comments[i].parent_id === id ) getChildComment( comments[i].id );
@@ -187,6 +188,7 @@ class App extends Component {
                     <div className="row d-flex align-items-center justify-content-center">
                         <div className="col-md-6">
 
+                            {/* Create post */}
                             <CreatePost
                                 userImg = { this.state.user.imgSrc }
                                 togglePopup = { this.handlePopupWindow }
@@ -213,14 +215,14 @@ class App extends Component {
 
                         </div>
                         
-                        {/* popup window of create post */}
+                        {/* popup window for create post */}
                         { this.state.windows.displayCreatePost &&  <CreatePostBox
                                 togglePopup = { this.handlePopupWindow }
                                 handleCreatePost = { this.handleCreatePost }
                             />
                         }
 
-                        {/* popup window of edit post */}
+                        {/* popup window for edit post */}
                         { this.state.windows.displayEditPost && <EditPost
                                 handleEditPost = { this.handleEditPost }
                                 index = { this.state.temp.postIndex }
@@ -231,7 +233,7 @@ class App extends Component {
                             />
                         }
 
-                        {/* popup window of delete post */}
+                        {/* popup window for delete post */}
                         { this.state.windows.displayDeletePost && <DeletePost
                                 handleDeletePost = { this.handleDeletePost }
                                 index = { this.state.temp.postIndex}
