@@ -23,7 +23,7 @@ class App extends Component {
         },
 
         temp: {
-            postIndex: '', // store post id to delete or edit post
+            postIndex: '', // store post id for delete or edit post
         }
     }
 
