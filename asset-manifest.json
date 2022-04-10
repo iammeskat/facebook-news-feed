@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/github.io/facebook-news-feed/static/css/main.9fbd2ff5.chunk.css",
+    "main.js": "/github.io/facebook-news-feed/static/js/main.cc464c48.chunk.js",
+    "main.js.map": "/github.io/facebook-news-feed/static/js/main.cc464c48.chunk.js.map",
+    "runtime-main.js": "/github.io/facebook-news-feed/static/js/runtime-main.963172b3.js",
+    "runtime-main.js.map": "/github.io/facebook-news-feed/static/js/runtime-main.963172b3.js.map",
+    "static/css/2.32c1ecfd.chunk.css": "/github.io/facebook-news-feed/static/css/2.32c1ecfd.chunk.css",
+    "static/js/2.fea87ba4.chunk.js": "/github.io/facebook-news-feed/static/js/2.fea87ba4.chunk.js",
+    "static/js/2.fea87ba4.chunk.js.map": "/github.io/facebook-news-feed/static/js/2.fea87ba4.chunk.js.map",
+    "static/js/3.ab8ab238.chunk.js": "/github.io/facebook-news-feed/static/js/3.ab8ab238.chunk.js",
+    "static/js/3.ab8ab238.chunk.js.map": "/github.io/facebook-news-feed/static/js/3.ab8ab238.chunk.js.map",
+    "index.html": "/github.io/facebook-news-feed/index.html",
+    "static/css/2.32c1ecfd.chunk.css.map": "/github.io/facebook-news-feed/static/css/2.32c1ecfd.chunk.css.map",
+    "static/css/main.9fbd2ff5.chunk.css.map": "/github.io/facebook-news-feed/static/css/main.9fbd2ff5.chunk.css.map",
+    "static/js/2.fea87ba4.chunk.js.LICENSE.txt": "/github.io/facebook-news-feed/static/js/2.fea87ba4.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.963172b3.js",
+    "static/css/2.32c1ecfd.chunk.css",
+    "static/js/2.fea87ba4.chunk.js",
+    "static/css/main.9fbd2ff5.chunk.css",
+    "static/js/main.cc464c48.chunk.js"
+  ]
+}
