@@ -1,5 +1,6 @@
 {
-  "homepage": "http://iammeskat/github.io/facebook-news-feed",
+  "author": "meskatcse@gmail.com",
+  "homepage": ".",
   "name": "facebook-news-feed",
   "version": "0.1.0",
   "private": true,
